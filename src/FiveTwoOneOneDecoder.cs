@@ -34,7 +34,7 @@ namespace BytesAndData
 
         public String DecodeCardPair(byte cardState, byte cardData)
         {
-            if(cardData == 0)
+            if (cardData == 0)
             {
                 return "No Card";
             }
@@ -43,12 +43,12 @@ namespace BytesAndData
 
         public String DecodeCardState(byte cardState)
         {
-            if(cardState == 0)
+            if (cardState == 0)
             {
                 return "Face Down";
             }
 
-            if(cardState == 1)
+            if (cardState == 1)
             {
                 return "Face Up";
             }
@@ -67,27 +67,27 @@ namespace BytesAndData
         public String DecodeColor(byte cardData)
         {
             byte color = Support.GetTopNibble(cardData);
-            if(color == 0)
+            if (color == 0)
             {
                 return "Yellow";
             }
 
-            if(color == 1)
+            if (color == 1)
             {
                 return "Green";
             }
 
-            if(color == 2)
+            if (color == 2)
             {
                 return "Blue";
             }
 
-            if(color == 3)
+            if (color == 3)
             {
                 return "Orange";
             }
 
-            if(color == 4)
+            if (color == 4)
             {
                 return "Black";
             }

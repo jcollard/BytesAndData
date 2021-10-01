@@ -103,7 +103,8 @@ namespace BytesAndData
         public static String ToHex(byte[] data)
         {
             String hex = "";
-            foreach(byte b in data) {
+            foreach (byte b in data)
+            {
                 hex += b.ToString("x2");
             }
             return "0x";
