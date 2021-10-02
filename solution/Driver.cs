@@ -1,4 +1,4 @@
-﻿namespace BytesAndData
+﻿namespace FiveTwoOneOneDecoder
 {
     using System;
 
