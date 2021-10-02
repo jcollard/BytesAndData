@@ -47,15 +47,18 @@
         /// Copies a subset of bytes from the specified byte array, data,
         /// into a new byte array. The first byte copied is specefied by
         /// startIx and the number of bytes to copy is specified by length.
+        /// </summary>
         /// <example> Example:
         /// <code>
         /// byte[] data = { 0x01, 0x02, 0x03, 0x04, 0x05, 0x06 };
         /// byte[] subdata = Support.GetBytes(data, 2, 2);
         /// Console.WriteLine(Support.ToHex(subdata));
         /// </code>
-        /// Writes: "0x0304"
+        /// <code>
+        /// Output:
+        /// 0x0304
+        /// </code>
         /// </example>
-        /// </summary>
         /// <param name="data">The bytes to copy.</param>
         /// <param name="startIx">The first byte to copy.</param>
         /// <param name="length">The number of bytes to copy.</param>
