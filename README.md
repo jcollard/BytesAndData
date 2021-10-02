@@ -34,7 +34,13 @@ https://marketplace.visualstudio.com/items?itemName=ms-vscode.hexeditor
 
 ## Setup the Project
 
-TODO:
+
+### Open in VS Code
+
+### Select Project
+
+* OmniSharp: Select Project
+* .NET: Restore All Projects
 
 Configure your `test_data` directory.
 
