@@ -1,47 +1,57 @@
-﻿using System;
-namespace BytesAndData
+﻿namespace BytesAndData
 {
+    using System;
+
+    /// <summary>
+    /// This is an implementation of the IFiveTwoOneOneDecoder interface.
+    /// </summary>
     public class FiveTwoOneOneDecoder : IFiveTwoOneOneDecoder
     {
-
-        public String DecodeTwoPlayer(String player1Label, String player2Label, byte[] data)
+        /// <inheritdoc />
+        public string DecodeTwoPlayer(string player1Label, string player2Label, byte[] data)
         {
-            String playerOne = DecodePlayer(player1Label, Support.GetBytes(data, 0, 16));
-            String playerTwo = DecodePlayer(player2Label, Support.GetBytes(data, 16, 16));
+            string playerOne = this.DecodePlayer(player1Label, Support.GetBytes(data, 0, 16));
+            string playerTwo = this.DecodePlayer(player2Label, Support.GetBytes(data, 16, 16));
             return $"{playerOne}\n{playerTwo}";
         }
 
-        public String DecodePlayer(String label, byte[] data)
+        /// <inheritdoc />
+        public string DecodePlayer(string label, byte[] data)
         {
-            String hand = DecodeHand(Support.GetBytes(data, 0, 8));
-            String board = DecodeBoard(Support.GetBytes(data, 8, 8));
+            string hand = this.DecodeHand(Support.GetBytes(data, 0, 8));
+            string board = this.DecodeBoard(Support.GetBytes(data, 8, 8));
             return $"{label} Hand: {hand}\n{label} Board: {board}";
         }
 
-        public String DecodeHand(byte[] data)
+        /// <inheritdoc />
+        public string DecodeHand(byte[] data)
         {
-            return $"{DecodeCard(data[3])}, {DecodeCard(data[4])}, {DecodeCard(data[5])}, {DecodeCard(data[6])}, {DecodeCard(data[7])}";
+            return $"{this.DecodeCard(data[3])}, {this.DecodeCard(data[4])}, {this.DecodeCard(data[5])}, {this.DecodeCard(data[6])}, {this.DecodeCard(data[7])}";
         }
 
-        public String DecodeBoard(byte[] data)
+        /// <inheritdoc />
+        public string DecodeBoard(byte[] data)
         {
-            String first = DecodeCardPair(data[0], data[1]);
-            String second = DecodeCardPair(data[2], data[3]);
-            String third = DecodeCardPair(data[4], data[5]);
-            String fourth = DecodeCardPair(data[6], data[7]);
+            string first = this.DecodeCardPair(data[0], data[1]);
+            string second = this.DecodeCardPair(data[2], data[3]);
+            string third = this.DecodeCardPair(data[4], data[5]);
+            string fourth = this.DecodeCardPair(data[6], data[7]);
             return $"{first}, {second}, {third}, {fourth}";
         }
 
-        public String DecodeCardPair(byte cardState, byte cardData)
+        /// <inheritdoc />
+        public string DecodeCardPair(byte cardState, byte cardData)
         {
             if (cardData == 0)
             {
                 return "No Card";
             }
-            return $"{DecodeCardState(cardState)} {DecodeCard(cardData)}";
+
+            return $"{this.DecodeCardState(cardState)} {this.DecodeCard(cardData)}";
         }
 
-        public String DecodeCardState(byte cardState)
+        /// <inheritdoc />
+        public string DecodeCardState(byte cardState)
         {
             if (cardState == 0)
             {
@@ -56,15 +66,16 @@ namespace BytesAndData
             return $"Invalid Card State {Support.ToHex(cardState)}";
         }
 
-        public String DecodeCard(byte cardData)
+        /// <inheritdoc />
+        public string DecodeCard(byte cardData)
         {
-            String value = DecodeValue(cardData);
-            String color = DecodeColor(cardData);
+            string value = this.DecodeValue(cardData);
+            string color = this.DecodeColor(cardData);
             return $"{color} {value}";
         }
 
-
-        public String DecodeColor(byte cardData)
+        /// <inheritdoc />
+        public string DecodeColor(byte cardData)
         {
             byte color = Support.GetTopNibble(cardData);
             if (color == 0)
@@ -93,10 +104,10 @@ namespace BytesAndData
             }
 
             return $"Invalid Color ({Support.ToHex(cardData)})";
-
         }
 
-        public String DecodeValue(byte cardData)
+        /// <inheritdoc />
+        public string DecodeValue(byte cardData)
         {
             byte value = Support.GetBottomNibble(cardData);
             if (value == 1)

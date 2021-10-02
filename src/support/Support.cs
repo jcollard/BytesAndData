@@ -1,27 +1,30 @@
-﻿using System;
-using System.IO;
-
-namespace BytesAndData
+﻿namespace BytesAndData
 {
+    using System;
+    using System.IO;
+
+    /// <summary>
+    /// The Support class provides helper methods to complete low level tasks.
+    /// </summary>
     public class Support
     {
-
-        private static readonly Config config = new Config();
+        private static readonly Config Config = new Config();
 
         /// <summary>
         /// Given a filename and the number of bytes to read, returns a byte array
         /// containing the first n bytes from the file.
         /// </summary>
-        /// <param name="filename">The file to read from</param>
-        /// <param name="n">The number of bytes to read</param>
-        /// <returns>An array of bytes</returns>
-        public static byte[] ReadBytes(String filename, int n)
+        /// <param name="filename">The file to read from.</param>
+        /// <param name="n">The number of bytes to read.</param>
+        /// <returns>An array of bytes.</returns>
+        public static byte[] ReadBytes(string filename, int n)
         {
-            filename = config.GetTestDirectory() + filename;
+            filename = Config.GetTestDirectory() + filename;
             if (!File.Exists(filename))
             {
                 throw new IOException($"The filespecified \"{filename}\" does not exists");
             }
+
             FileStream reader = new FileStream(filename, FileMode.Open);
 
             byte[] data = new byte[n];
@@ -32,8 +35,10 @@ namespace BytesAndData
                 {
                     throw new EndOfStreamException($"The end of the file has been reached. Read {ix} bytes but expected {n}.");
                 }
+
                 data[ix] = (byte)d;
             }
+
             reader.Close();
             return data;
         }
@@ -51,10 +56,10 @@ namespace BytesAndData
         /// Writes: "0x0304"
         /// </example>
         /// </summary>
-        /// <param name="data">The bytes to copy</param>
-        /// <param name="startIx">The first byte to copy</param>
-        /// <param name="length">The number of bytes to copy</param>
-        /// <returns>A subset of the bytes from the specified byte array</returns>
+        /// <param name="data">The bytes to copy.</param>
+        /// <param name="startIx">The first byte to copy.</param>
+        /// <param name="length">The number of bytes to copy.</param>
+        /// <returns>A subset of the bytes from the specified byte array.</returns>
         public static byte[] GetBytes(byte[] data, int startIx, int length)
         {
             byte[] subarray = new byte[length];
@@ -62,14 +67,15 @@ namespace BytesAndData
             {
                 subarray[ix] = data[ix + startIx];
             }
+
             return subarray;
         }
 
         /// <summary>
         /// Given a byte, data, returns the highest order nibble (4-bits).
         /// </summary>
-        /// <param name="data">The byte to examine</param>
-        /// <returns>a 4-bit number</returns>
+        /// <param name="data">The byte to examine.</param>
+        /// <returns>a 4-bit number.</returns>
         public static byte GetTopNibble(byte data)
         {
             return (byte)(data >> 4);
@@ -78,35 +84,36 @@ namespace BytesAndData
         /// <summary>
         /// Given a byte, data, returns the lowest order nibble (4-bits).
         /// </summary>
-        /// <param name="data">The byte to examine</param>
-        /// <returns>A 4-bit number</returns>
+        /// <param name="data">The byte to examine.</param>
+        /// <returns>A 4-bit number.</returns>
         public static byte GetBottomNibble(byte data)
         {
             return (byte)(data & 0x0F);
         }
 
         /// <summary>
-        /// Given a byte, returns a hexadecimal string representing its value
+        /// Given a byte, returns a hexadecimal string representing its value.
         /// </summary>
-        /// <param name="data">The byte to examine</param>
-        /// <returns>A string containing a hexadecimal value</returns>
-        public static String ToHex(byte data)
+        /// <param name="data">The byte to examine.</param>
+        /// <returns>A string containing a hexadecimal value.</returns>
+        public static string ToHex(byte data)
         {
             return "0x" + data.ToString("X2");
         }
 
         /// <summary>
-        /// Given an array of bytes, returns a hexadecimal string representing its values
+        /// Given an array of bytes, returns a hexadecimal string representing its values.
         /// </summary>
-        /// <param name="data">The data to examine</param>
-        /// <returns>A hexadecimal representation of the data</returns>
-        public static String ToHex(byte[] data)
+        /// <param name="data">The data to examine.</param>
+        /// <returns>A hexadecimal representation of the data.</returns>
+        public static string ToHex(byte[] data)
         {
-            String hex = "";
+            string hex = string.Empty;
             foreach (byte b in data)
             {
                 hex += b.ToString("x2");
             }
+
             return "0x";
         }
     }
