@@ -11,7 +11,19 @@ https://dotnet.microsoft.com/download/dotnet/5.0
 
 ### .NET for Windows
 
+https://dotnet.microsoft.com/download/dotnet/5.0
+
 ### C# Plugin for VS Code
+
+https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp
+
+### .NET Core Test Explorer
+
+https://marketplace.visualstudio.com/items?itemName=formulahendry.dotnet-test-explorer
+
+### XML Documentation Comments Plugin
+
+https://marketplace.visualstudio.com/items?itemName=k--kato.docomment
 
 
 ### Hex Editor for VS Code
