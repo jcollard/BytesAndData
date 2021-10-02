@@ -28,7 +28,7 @@
         public IFiveTwoOneOneDecoder GetDecoder()
         {
             // TODO: Update to return your Decoder
-            return null;
+            return new FiveTwoOneOneDecoder();
         }
 
         /// <summary>

@@ -140,7 +140,7 @@
                 return "Six";
             }
 
-            return $"Invalid Value \"{Support.ToHex(cardData)}\"";
+            return $"Invalid Value ({Support.ToHex(cardData)})";
         }
     }
 }
