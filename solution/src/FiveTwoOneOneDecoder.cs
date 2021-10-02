@@ -63,7 +63,7 @@
                 return "Face Up";
             }
 
-            return $"Invalid Card State {Support.ToHex(cardState)}";
+            return $"Invalid Card State ({Support.ToHex(cardState)})";
         }
 
         /// <inheritdoc />
