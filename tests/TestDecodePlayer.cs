@@ -3,7 +3,7 @@ namespace BytesAndData
     using NUnit.Framework;
 
     /// <summary>
-    /// Tests <see cref="IFiveTwoOneOneDecoder"/> DecodeBoard method.
+    /// Tests <see cref="IFiveTwoOneOneDecoder"/> DecodePlayer method.
     /// </summary>
     public class TestDecodePlayer
     {
