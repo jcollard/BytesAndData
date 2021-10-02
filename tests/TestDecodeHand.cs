@@ -20,7 +20,7 @@ namespace BytesAndData
         }
 
         /// <summary>
-        /// Tests decoding Yellow Cards.
+        /// Tests decoding a byte encoded hand.
         /// </summary>
         [Test]
         public void DecodeHand0()
@@ -30,7 +30,7 @@ namespace BytesAndData
         }
 
         /// <summary>
-        /// Tests decoding Yellow Cards.
+        /// Tests decoding a byte encoded hand.
         /// </summary>
         [Test]
         public void DecodeHand1()
