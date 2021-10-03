@@ -110,32 +110,32 @@
         public string DecodeValue(byte cardData)
         {
             byte value = Support.GetBottomNibble(cardData);
-            if (value == 1)
+            if (value == 0x01)
             {
                 return "Rooster";
             }
 
-            if (value == 2)
+            if (value == 0x02)
             {
                 return "Two";
             }
 
-            if (value == 3)
+            if (value == 0x03)
             {
                 return "Three";
             }
 
-            if (value == 4)
+            if (value == 0x04)
             {
                 return "Four";
             }
 
-            if (value == 5)
+            if (value == 0x05)
             {
                 return "Five";
             }
 
-            if (value == 6)
+            if (value == 0x06)
             {
                 return "Six";
             }

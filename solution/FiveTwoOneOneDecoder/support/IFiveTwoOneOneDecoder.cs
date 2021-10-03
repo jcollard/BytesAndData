@@ -192,7 +192,7 @@
         ///
         /// <param name="cardState">A 5211 card state encoded byte.</param>
         /// <returns>A string representation of the card state.</returns>
-        public string DecodeCardState(byte cardState);
+        public string DecodeCardState(byte cardState); // Placement?
 
         /// <summary>
         /// Given a 5211 card state encoded byte and a byte encoding a 5211 card, this method returns a string representation of the card state and card.
@@ -231,7 +231,7 @@
         /// <param name="cardState">A byte encoded 5211 Card State.</param>
         /// <param name="cardData">A byte encoded 5211 Card.</param>
         /// <returns>A string representation of the decoded card pair.</returns>
-        public string DecodeCardPair(byte cardState, byte cardData);
+        public string DecodeCardPair(byte cardState, byte cardData); // Card Space? Board Space? 
 
         /// <summary>
         /// Given a byte array of 8 bytes encoding a 5211 Player Board, returns a string representation of the board.
