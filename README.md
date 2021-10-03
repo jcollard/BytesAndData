@@ -59,9 +59,9 @@ TODO:
 Week of Oct 19th (1 block period + 1 homework session). No Monday session.
 
 1st Block: Introduce binary, bits, nibble, bytes, hexadecimal, decimal, and
-number conversions. 
+number conversions. Install hex editor?
 
-Second half of block: Students work 
+Second half of block: Students work on encoding
 
 Homework: Students finish Milestone 1
 
@@ -76,7 +76,9 @@ Task List:
 Students start programming in C#.
 
 Week of 19th: 2nd Block: In class, install .NET + all plugins, maybe short demo
-/ overview Homework: None? Simple C# Driver video? Getting Started video?
+/ overview 
+
+Homework: None? Simple C# Driver video? Getting Started video?
 
 Week of 25th (Monday / Friday switched so block on Monday and short class on
 Friday) 
