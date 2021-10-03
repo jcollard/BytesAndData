@@ -27,6 +27,7 @@ namespace FiveTwoOneOneDecoder
         {
             Assert.AreEqual(this.decoder.DecodeCardPair(0x00, 0x34), "Face Down Orange Four");
             Assert.AreEqual(this.decoder.DecodeCardPair(0x01, 0x22), "Face Up Blue Two");
+            Assert.AreEqual(this.decoder.DecodeCardPair(0x00, 0x00), "No Card");
         }
     }
 }
