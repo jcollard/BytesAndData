@@ -3,7 +3,7 @@
     using System;
 
     /// <summary>
-    /// This interface defines the methods necessary to create a FiveTwoOneOneDecoder.
+    /// This interface defines the methods necessary to create a 5211 Decoder.
     /// </summary>
     public interface IFiveTwoOneOneDecoder
     {
