@@ -2,18 +2,6 @@
 
 In this document, we define a protocol for digitally representing 5211 Cards.
 
-- [5211 Encoding Protocol](#5211-encoding-protocol)
-  - [Card](#card)
-    - [Binary Examples](#binary-examples)
-    - [Hexadecimal Examples](#hexadecimal-examples)
-  - [Hand](#hand)
-    - [Examples](#examples)
-  - [Player Board](#player-board)
-    - [Examples](#examples-1)
-  - [2 Player Board State](#2-player-board-state)
-      - [Player 1's Board / Hand](#player-1s-board--hand)
-      - [Player 2's Board / Hand](#player-2s-board--hand)
-
 ## Card
 
 A card has two important properties: Color and Value. In this protocol, a card
