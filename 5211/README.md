@@ -1,7 +1,18 @@
-# 5211 2 Player Board State Protocol
+# 5211 Encoding Protocol
 
-In this document, we define a protocol for digitally representing the state of a
-2 player game of 5-2-1-1.
+In this document, we define a protocol for digitally representing 5211 Cards.
+
+- [5211 Encoding Protocol](#5211-encoding-protocol)
+  - [Card](#card)
+    - [Binary Examples](#binary-examples)
+    - [Hexadecimal Examples](#hexadecimal-examples)
+  - [Hand](#hand)
+    - [Examples](#examples)
+  - [Player Board](#player-board)
+    - [Examples](#examples-1)
+  - [2 Player Board State](#2-player-board-state)
+      - [Player 1's Board / Hand](#player-1s-board--hand)
+      - [Player 2's Board / Hand](#player-2s-board--hand)
 
 ## Card
 
@@ -22,29 +33,29 @@ The color value is enumerated in the following order:
 
 The card value will be represented simply as the cards value.
 
-### Binary Examples:
+### Binary Examples
 
-* `0b0000_0001` - Yellow 1
-* `0b0010_0100` - Blue 5
-* `0b0011_0011` - Orange 3
+* `0b0000_0001` - Yellow Rooster
+* `0b0010_0100` - Blue Five
+* `0b0011_0011` - Orange Three
 * `0b0101_0001` - Invalid Card
 
-### Hexadecimal Examples:
+### Hexadecimal Examples
 
-* `0x01` - Yellow 1
-* `0x25` - Blue 5
-* `0x34` - Orange 3
+* `0x01` - Yellow Rooster
+* `0x25` - Blue Five
+* `0x34` - Orange Three
 * `0x61` - Invalid Card
 
 ## Hand
 
 A hand contains 5 cards. This is represented using 8 bytes. The first 3 bytes
-are ignored. Each of the last 5 bytes is represents one of the 5 cards.
+are ignored. Each of the last 5 bytes represents one of the 5 cards.
 
-### Examples:
-* `0x00_00_00_01_25_34_31_43` - Yellow 1, Blue 5, Orange 4, Orange 1, Black 3
-* `0x00_00_00_41_41_31_31_06` - Black 1, Black 1, Orange 1, Orange 1, Yellow 6
-* `0x00_00_00_12_23_34_45_06` - Green 2, Blue 3, Orange 4, Black 5, Yellow 6
+### Examples
+* `0x00_00_00_01_25_34_31_43` - Yellow Rooster, Blue Five, Orange Four, Orange Rooster, Black Three
+* `0x00_00_00_41_41_31_31_06` - Black Rooster, Black Rooster, Orange Rooster, Orange Rooster, Yellow Six
+* `0x00_00_00_12_23_34_45_06` - Green Two, Blue Three, Orange Four, Black Five, Yellow Six
 * `0x00_00_00_51_32_43_21_11` - Invalid hand
 
 
@@ -60,15 +71,15 @@ highest 2-bytes and the last card played is stored in the lowest 2-bytes. If a
 card has not yet been played in one of the positions, that is represented as
 `0x0000`.
 
-### Examples:
+### Examples
 * `0x0000_0000_0000_0000` - No cards have been played.
-* `0x0001_0025_0000_0000` - A Yellow 1 and a Blue 5 are in play face-down.
-* `0x0101_0125_0000_0000` - A Yellow 1 and a Blue 5 are in play face-up.
-* `0x0101_0125_0034_0000` - A Yellow 1 and a Blue 5 are in play face-up and an
-  Orange 3 is in play face-down.
-* `0x0101_0125_0134_0006` - A Yellow 1, a Blue 5, and an Orange 3 are in play
-  face-up and a Yellow 6 is in play face-down.
-* `0x0101_0125_0134_0106` - A Yellow 1, Blue 5, an Orange 3, and a Yellow 6 are
+* `0x0001_0025_0000_0000` - A Yellow Rooster and a Blue Five are in play face-down.
+* `0x0101_0125_0000_0000` - A Yellow Rooster and a Blue Five are in play face-up.
+* `0x0101_0125_0034_0000` - A Yellow Rooster and a Blue Five are in play face-up and an
+  Orange Three is in play face-down.
+* `0x0101_0125_0134_0006` - A Yellow Rooster, a Blue Five, and an Orange Three are in play
+  face-up and a Yellow Six is in play face-down.
+* `0x0101_0125_0134_0106` - A Yellow Rooster, Blue Five, an Orange Three, and a Yellow Six are
   in play face-up.
 
 ## 2 Player Board State
