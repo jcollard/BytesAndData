@@ -1,5 +1,11 @@
 # Bytes and Data Encoding
 
+## Overview
+
+In this project you will explore how computers are used to digitally encode information.
+
+In Milestone 1, you will  binary and hexadecimal 
+
 ## Sign up for Project
 
 TODO:
@@ -40,6 +46,7 @@ https://marketplace.visualstudio.com/items?itemName=ms-vscode.hexeditor
 ### Select Project
 
 * OmniSharp: Select Project
+  * Select All Projects
 * .NET: Restore All Projects
 
 Configure your `test_data` directory.
